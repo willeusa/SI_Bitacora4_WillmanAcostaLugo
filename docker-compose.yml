@@ -1,0 +1,32 @@
+# Laboratorio de Sistemas Informáticos - Bitácora 3
+# Este archivo levanta dos servicios: un servidor SSH y un entorno gráfico vía RDP/Web
+version: '3.8'
+services:
+  # Servidor especializado para prácticas de SSH y seguridad
+  servidor_ssh:
+    image: linuxserver/openssh-server:latest
+    container_name: lab_ssh_servidor
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+      - USER_NAME=alumno
+      - USER_PASSWORD=sistemas_informaticos
+      - PASSWORD_ACCESS=true
+    ports:
+      - "2222:2222" # Mapeamos el puerto 2222 local al 2222 del contenedor
+    restart: unless-stopped
+
+  # Servidor con entorno gráfico ligero (XFCE) accesible por RDP y Web
+  servidor_rdp:
+    image: linuxserver/webtop:ubuntu-xfce
+    container_name: lab_rdp_servidor
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    ports:
+      - "3389:3389" # Puerto estándar de Escritorio Remoto (RDP)
+      - "3000:3000" # Puerto para acceso vía navegador (HTTP/Guacamole)
+    shm_size: "1gb" # Importante para evitar cuelgues en el entorno gráfico
+    restart: unless-stopped
