@@ -2,7 +2,7 @@
 
 ## **1\. Introducción y Objetivos**
 
-Este repositorio contiene la documentación y los archivos de configuración para la **Bitácora Técnica 3** del módulo de **Sistemas Informáticos**. El objetivo principal es demostrar la capacidad de gestionar servidores de forma remota mediante protocolos seguros (SSH y RDP) utilizando una infraestructura ligera basada en contenedores **Docker**.
+Este repositorio contiene la documentación y los archivos de configuración para la **Bitácora Técnica 4** del módulo de **Sistemas Informáticos**. El objetivo principal es demostrar la capacidad de gestionar servidores de forma remota mediante protocolos seguros (SSH y RDP) utilizando una infraestructura ligera basada en contenedores **Docker**.
 
 **RA Evaluado:** RA 6 \- Operar sistemas en red gestionando recursos e identificando restricciones de seguridad.
 
@@ -28,6 +28,14 @@ Al intentar la conexión inicial con ssh alumno@localhost \-p 2222, el sistema c
   * *Solución:* Forzar el uso de la pila IPv4 usando 127.0.0.1.  
 * **Problema 2 (Mapeo de Puertos):** El servicio interno de la imagen linuxserver/openssh-server escucha por defecto en el puerto **2222**, no en el 22\.  
   * *Solución:* Corregir el archivo _docker-compose.yml_ para mapear explícitamente el puerto del anfitrión al puerto correcto del contenedor (2222:2222).
+
+Realizamos correctamente:
+
+* **Paso A (Conexión Inicial)**: Conéctate al contenedor usando ssh alumno@localhost -p 2222. La contraseña es sistemas_informaticos.
+* **Paso B (Generación de Identidad)**: En tu máquina anfitriona, genera un par de llaves: ssh-keygen -t ed25519 -C "tu_correo@ejemplo.com"
+* **Paso C (Transferencia)**: Copia tu llave pública al servidor. Puedes usar ssh-copy-id -p 2222 alumno@localhost o hacerlo manualmente pegando el contenido en ~/.ssh/authorized_keys dentro del contenedor.
+
+: [Clave generada](assets/Key.png) :
 
 ### **3.2. RDP: Protocolos y Sesiones Fantasma**
 
