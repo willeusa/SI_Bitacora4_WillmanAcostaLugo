@@ -35,7 +35,7 @@ Realizamos correctamente:
 * **Paso B (Generación de Identidad)**: En tu máquina anfitriona, genera un par de llaves: ssh-keygen -t ed25519 -C "tu_correo@ejemplo.com"
 * **Paso C (Transferencia)**: Copia tu llave pública al servidor. Puedes usar ssh-copy-id -p 2222 alumno@localhost o hacerlo manualmente pegando el contenido en ~/.ssh/authorized_keys dentro del contenedor.
 
-:[Clave generada](assets/Key.png):
+<img src="assets/Key.png" alt="Clave generada y copiada al repositorio" width="450px" height="100%">
 
 ### **3.2. RDP: Protocolos y Sesiones Fantasma**
 
