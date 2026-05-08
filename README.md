@@ -1,4 +1,4 @@
-# **Bitácora Técnica 3: Gestión de Acceso Remoto Seguro (SSH/RDP)**
+# **Bitácora Técnica 4: Gestión de Acceso Remoto Seguro (SSH/RDP)**
 
 ## **1\. Introducción y Objetivos**
 
