@@ -1,5 +1,6 @@
-# Laboratorio de Sistemas Informáticos - Bitácora 3
+# Laboratorio de Sistemas Informáticos - Bitácora 4
 # Este archivo levanta dos servicios: un servidor SSH y un entorno gráfico vía RDP/Web
+# Aunque la línea siguiente: Versión aparezca con mensaje **Deprecated** la declaramos porque resguarda la creación de infraestructura
 version: '3.8'
 services:
   # Servidor especializado para prácticas de SSH y seguridad
