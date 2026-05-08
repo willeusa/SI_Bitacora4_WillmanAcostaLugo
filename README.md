@@ -34,11 +34,11 @@ Al intentar la conexión inicial con ssh alumno@localhost \-p 2222, el sistema c
 Al probar el acceso gráfico, surgieron dos errores críticos que todo administrador debe conocer:
 
 * **Error 0x1104 (Protocol Error):** Ocurrió al intentar conectar el cliente de Windows (MSTSC) al puerto **3000**.  
-  * *Lección:* El puerto 3000 está reservado para el visor **HTTP/Web**. Los protocolos no son intercambiables; RDP debe ir por el 3389\.  
+  * *Aprendizaje:* El puerto 3000 está reservado para el visor **HTTP/Web**. Los protocolos no son intercambiables; RDP debe ir por el 3389\.  
   :![Errorr 0x1104](assets/3389.png):
 * **Error 0x708 (Sesión en curso):** Al tener abierta la sesión en el navegador y querer entrar simultáneamente por RDP nativo, el sistema bloqueó el acceso.  
 :![Errorr 0x708](assets/3000.png):
-  * *Lección:* Estos contenedores gestionan una **sesión de consola única**. No se puede "duplicar" el monitor virtual.  
+  * *Aprendizaje:* Estos contenedores gestionan una **sesión de consola única**. No se puede "duplicar" el monitor virtual.  
   * *Solución:* Realizar un *Log Out* real en la sesión web o reiniciar el contenedor para liberar el recurso.
 
 ## **4\. Evidencias del Laboratorio**
